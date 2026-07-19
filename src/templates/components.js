@@ -63,3 +63,29 @@ export function sectionTitle(kicker, title, sub = "") {
 
 // 수익 예시 면책 문구 (반복 사용)
 export const incomeDisclaimer = `<p class="disclaimer">※ 표시된 수익은 <strong>예시</strong>이며 특정 금액을 보장하지 않습니다. 실제 수익은 지역·시간대·경력·운행량에 따라 달라질 수 있습니다.</p>`;
+
+// H1 위 대표 이미지 (LCP 대상 → eager 로딩)
+export function pageHero(src, alt) {
+  return `<img class="page-hero-img" src="${src}" alt="${esc(alt)}" width="1200" height="457" loading="eager" fetchpriority="high" decoding="async">`;
+}
+
+// 본문 삽입 이미지 (figure + 캡션)
+export function figure(src, alt, caption = "") {
+  return `<figure class="fig">
+    <img src="${src}" alt="${esc(alt)}" width="900" height="562" loading="lazy" decoding="async">
+    ${caption ? `<figcaption>${esc(caption)}</figcaption>` : ""}
+  </figure>`;
+}
+
+// 텍스트+이미지 2단 구성
+export function mediaSplit(imgSrc, alt, html, reverse = false) {
+  return `<div class="media-split${reverse ? " reverse" : ""}">
+    <div class="media-txt">${html}</div>
+    <div class="media-img"><img src="${imgSrc}" alt="${esc(alt)}" width="900" height="675" loading="lazy" decoding="async"></div>
+  </div>`;
+}
+
+// 별점 (후기용) — 시각 표시
+export function stars(n = 5) {
+  return `<span class="stars" aria-label="별점 ${n}점">${"★".repeat(n)}${"☆".repeat(5 - n)}</span>`;
+}

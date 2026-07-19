@@ -1,7 +1,8 @@
 import { site } from "../data/site.js";
 import { regions } from "../data/regions.js";
+import { regionHero, regionBodyImages } from "../data/images.js";
 import { layout } from "../templates/layout.js";
-import { esc, icon, ctaButtons, sectionTitle } from "../templates/components.js";
+import { esc, icon, ctaButtons, sectionTitle, pageHero, figure } from "../templates/components.js";
 
 // /regions/ — 전국 지역 인덱스
 function regionsIndex() {
@@ -83,9 +84,11 @@ function jobLinksBlock(placeName) {
 function regionPage(r) {
   const path = `/regions/${r.slug}/`;
   const districts = r.districts || [];
+  const bodyImgs = regionBodyImages(r.slug);
   const body = `
 <section class="page-head">
   <div class="wrap">
+    ${pageHero(regionHero(r.slug), `${r.name} 오토바이 퀵서비스 기사 모집 지역 이미지`)}
     <span class="badge">${icon("pin")} 지역모집</span>
     <h1>${esc(r.name)} 퀵서비스 기사 모집</h1>
     <p class="lead">${esc(r.summary)}</p>
@@ -97,7 +100,9 @@ function regionPage(r) {
   <div class="wrap grid-2">
     <div>
       ${localInfoBlock(r)}
+      ${figure(bodyImgs[0], `${r.name} 퀵서비스 오더 운행 환경`, `${r.name} 지역 오더 특성과 운행 환경`)}
       ${jobLinksBlock(r.name)}
+      ${figure(bodyImgs[1], `${r.name} 오토바이 퀵 라이더 모집`, `${r.name}에서 함께할 라이더를 모집합니다`)}
     </div>
     <aside class="side-card">
       <h3>${esc(r.name)} 시·군·구</h3>
@@ -135,9 +140,11 @@ function regionPage(r) {
 function districtPage(r, d) {
   const path = `/regions/${r.slug}/${d.slug}/`;
   const stations = d.stations || [];
+  const bodyImgs = regionBodyImages(r.slug);
   const body = `
 <section class="page-head">
   <div class="wrap">
+    ${pageHero(regionHero(r.slug), `${r.name} ${d.name} 오토바이 퀵서비스 기사 모집 이미지`)}
     <span class="badge">${icon("pin")} ${esc(r.name)}</span>
     <h1>${esc(r.name)} ${esc(d.name)} 퀵서비스 기사 모집</h1>
     <p class="lead">${esc(d.summary)}</p>
@@ -149,6 +156,7 @@ function districtPage(r, d) {
   <div class="wrap grid-2">
     <div>
       ${localInfoBlock(d)}
+      ${figure(bodyImgs[0], `${r.name} ${d.name} 퀵서비스 운행 환경`, `${d.name} 지역 오더 특성`)}
       ${jobLinksBlock(`${r.name} ${d.name}`)}
     </div>
     <aside class="side-card">
@@ -188,9 +196,11 @@ function districtPage(r, d) {
 // /regions/{region}/{district}/{station}/
 function stationPage(r, d, s) {
   const path = `/regions/${r.slug}/${d.slug}/${s.slug}/`;
+  const bodyImgs = regionBodyImages(r.slug);
   const body = `
 <section class="page-head">
   <div class="wrap">
+    ${pageHero(regionHero(r.slug), `${s.name} 오토바이 퀵서비스 기사 모집 이미지`)}
     <span class="badge">${icon("pin")} ${esc(r.name)} ${esc(d.name)}</span>
     <h1>${esc(s.name)} 퀵서비스 기사 모집</h1>
     <p class="lead">${esc(s.summary)}</p>
@@ -204,6 +214,7 @@ function stationPage(r, d, s) {
     <p>${esc(s.name)} 일대에서 오토바이 퀵서비스 기사를 모집합니다. ${esc(d.summary)} 이 지역은 ${esc(r.name)} ${esc(d.name)}에 속하며, ${esc(
     (r.orderProfile || "").split(".")[0]
   )}.</p>
+    ${figure(bodyImgs[0], `${s.name} 퀵서비스 운행 환경`, `${s.name} 일대 오토바이 퀵 운행`)}
     <h2>${esc(s.name)} 투잡 · 부업</h2>
     <p>정해진 출퇴근 시간이 없어 ${esc(s.name)} 인근에서 퇴근 후·주말 시간을 활용한 투잡·부업 운행이 가능합니다. 원하는 시간대만 골라 운행할 수 있습니다.</p>
     ${jobLinksBlock(s.name)}

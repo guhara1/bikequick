@@ -1,15 +1,26 @@
 import { site } from "../data/site.js";
 import { jobs } from "../data/jobs.js";
+import { img } from "../data/images.js";
 import { layout } from "../templates/layout.js";
-import { esc, icon, ctaButtons, sectionTitle } from "../templates/components.js";
+import { esc, icon, ctaButtons, sectionTitle, pageHero, figure } from "../templates/components.js";
+
+// 직무별 본문 이미지 매핑
+const JOB_IMG = {
+  "quick-service-rider": "theme-rider", "motorcycle-rider": "theme-rider",
+  "part-time-rider": "theme-route", "two-job-rider": "theme-income",
+  "weekend-rider": "theme-city", "beginner-rider": "theme-safety",
+  "experienced-rider": "theme-map", "woman-rider": "theme-rider",
+};
 
 // 기사모집 인덱스
 function jobsIndex() {
   const body = `
 <section class="page-head">
   <div class="wrap">
+    ${pageHero(img("hero-jobs"), "전국 오토바이 퀵서비스 기사 모집·채용 — 근무 형태별 지원")}
+    <span class="badge">${icon("check")} 기사모집·채용</span>
     <h1>기사모집</h1>
-    <p class="lead">전국 오토바이 퀵서비스 기사를 모집합니다. 원하는 근무 형태를 선택하세요.</p>
+    <p class="lead">전국 오토바이 퀵서비스 기사를 모집합니다. 투잡·부업·주말·초보·경력·여성 라이더까지, 원하는 근무 형태를 선택하세요.</p>
   </div>
 </section>
 <section class="section">
@@ -52,10 +63,12 @@ ${ctaBand()}
 // 개별 직무 페이지
 function jobPage(j) {
   const path = `/jobs/${j.slug}/`;
+  const heroImg = img(JOB_IMG[j.slug] || "theme-rider");
   const body = `
 <section class="page-head">
   <div class="wrap">
-    <span class="badge">기사모집</span>
+    ${pageHero(heroImg, `${j.title} — 오토바이 퀵서비스 기사 채용`)}
+    <span class="badge">${icon("check")} 기사모집·채용</span>
     <h1>${esc(j.title)}</h1>
     <p class="lead">${esc(j.lead)}</p>
     ${ctaButtons()}

@@ -151,6 +151,19 @@ ${jsonLdBlock(schemas)}
 </head>
 <body>
 <a class="skip-link" href="#main">본문 바로가기</a>
+<div class="util-bar">
+  <div class="wrap">
+    <div class="util-left">
+      <span>${icon("check")} 예치금 0원</span>
+      <span>${icon("check")} 비대면 가입</span>
+      <span>${icon("check")} 24시간 출금</span>
+      <span>${icon("check")} 전국 17개 시·도 모집</span>
+    </div>
+    <div class="util-right">
+      <a href="${site.contact.phoneHref}">${icon("phone")} ${esc(site.contact.phone)}</a>
+    </div>
+  </div>
+</div>
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="/">

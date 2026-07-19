@@ -84,6 +84,39 @@ src/
   실제 검증된 기사 후기로 교체하고, **가짜 후기는 절대 게시하지 않습니다.**
 - **지역 페이지**: 키워드만 바꾼 대량 생성 금지. 지역별 고유 정보를 지속적으로 보강하세요.
 
+## 이미지 (WebP) 안내 · 실제 사진 교체 가이드
+
+모든 이미지는 `assets/img/photos/*.webp` 에 있으며, 전부 **30KB 이하**로 최적화돼 있습니다.
+현재는 브랜드 톤의 자체 생성 이미지(오토바이/도시/지도 등 모티프)입니다.
+빌드 환경의 네트워크 제약으로 무료 스톡 사진을 직접 내려받을 수 없어 대체 이미지를 넣었으니,
+아래 표를 참고해 **같은 파일명**으로 실제 사진(WebP, 30KB 내외)을 덮어쓰면 그대로 반영됩니다.
+
+무료 이미지 사이트: [Pixabay](https://pixabay.com/ko/) · [Unsplash](https://unsplash.com/ko) · [Pexels](https://www.pexels.com/ko-kr/) · [123RF 무료](https://kr.123rf.com/)
+(WebP 변환은 [squoosh.app](https://squoosh.app) 등에서 무료로 가능)
+
+| 파일명 | 사용 위치 | 추천 검색어 |
+| --- | --- | --- |
+| `hero-home.webp` | 홈 히어로 | 오토바이 배달, motorcycle courier city |
+| `hero-jobs.webp` | 기사모집 대표 | delivery rider helmet, 라이더 |
+| `hero-blog.webp` | 블로그 대표 | motorcycle road, 오토바이 도로 |
+| `region-urban.webp` | 도심권 지역(서울·대구 등) | city street motorcycle |
+| `region-industrial.webp` | 산업권 지역(경기·인천 등) | delivery box, 물류 |
+| `region-suburban.webp` | 근교 지역 | suburban road scooter |
+| `region-coastal.webp` | 해안권 지역(부산·제주 등) | coastal city rider |
+| `theme-rider.webp` | 라이더 본문 | motorcycle rider, 라이더 |
+| `theme-city.webp` | 도시 본문 | city skyline korea |
+| `theme-delivery.webp` | 배송 본문 | delivery parcel motorcycle |
+| `theme-route.webp` | 경로/근무 본문 | road route map |
+| `theme-income.webp` | 수익 본문 | income chart money |
+| `theme-safety.webp` | 안전/교육 본문 | motorcycle helmet safety |
+| `theme-map.webp` | 지도/플랫폼 본문 | map navigation pin |
+| `theme-night.webp` | 야간 본문 | night city motorcycle |
+
+> `alt`(대체 텍스트)는 페이지별로 키워드를 포함해 자동 생성되므로 파일만 교체하면 됩니다.
+> 이미지 배치 원칙: **H1 제목 위 대표 이미지 1장 + 본문 2~3장**, 모두 `loading` 지연 로딩과
+> 크기 지정(CLS 방지)을 적용했고, 이미지 사이트맵(`sitemap.xml`)에도 자동 포함됩니다.
+> 대체 이미지를 다시 생성하려면 `npm run images` (Python + Pillow 필요).
+
 ## 콘텐츠 추가 방법
 
 - **지역/역세권 추가**: `src/data/regions.js`에 항목 추가 → 자동으로 페이지·사이트맵·네비 반영

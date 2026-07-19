@@ -1,5 +1,6 @@
 import { site, benefits } from "../data/site.js";
 import { faq } from "../data/faq.js";
+import { img } from "../data/images.js";
 import { layout } from "../templates/layout.js";
 import {
   esc,
@@ -7,6 +8,7 @@ import {
   ctaButtons,
   sectionTitle,
   incomeDisclaimer,
+  pageHero,
 } from "../templates/components.js";
 
 const bc = (extra) => [
@@ -25,6 +27,8 @@ function page(path, title, description, body, opts = {}) {
 function workGuide() {
   const body = `
 <section class="page-head"><div class="wrap">
+  ${pageHero(img("theme-route"), "바이크퀵 근무안내 — 자유로운 오토바이 퀵서비스 근무 방식")}
+  <span class="badge">${icon("clock")} 근무안내</span>
   <h1>근무안내</h1>
   <p class="lead">바이크퀵의 근무 방식과 조건을 안내합니다. 자유로운 근무와 투명한 운영을 지향합니다.</p>
 </div></section>
@@ -65,6 +69,8 @@ function income() {
   ];
   const body = `
 <section class="page-head"><div class="wrap">
+  ${pageHero(img("theme-income"), "바이크퀵 수익안내 — 시간대별 퀵서비스 운행 수익 예시")}
+  <span class="badge">${icon("cash")} 수익안내</span>
   <h1>수익안내</h1>
   <p class="lead">시간대·근무형태별 운행 특성을 안내합니다. 아래 내용은 참고용 예시이며 특정 금액을 보장하지 않습니다.</p>
 </div></section>
@@ -115,6 +121,8 @@ ${band("나에게 맞는 운행 방식 상담받기", "지역·시간대에 맞�
 function join() {
   const body = `
 <section class="page-head"><div class="wrap">
+  ${pageHero(img("theme-rider"), "바이크퀵 가입방법 — 비대면 오토바이 퀵서비스 기사 가입")}
+  <span class="badge">${icon("mobile")} 가입방법</span>
   <h1>가입방법</h1>
   <p class="lead">방문 없이 비대면으로 가입할 수 있습니다. 문의부터 근무 시작까지 함께 도와드립니다.</p>
   ${ctaButtons()}
@@ -168,6 +176,8 @@ function education() {
   ];
   const body = `
 <section class="page-head"><div class="wrap">
+  ${pageHero(img("theme-safety"), "바이크퀵 기사교육 — 초보 라이더 오더·배차·안전운전 교육")}
+  <span class="badge">${icon("book")} 기사교육</span>
   <h1>기사교육</h1>
   <p class="lead">처음 시작하는 분도 걱정 없도록 오더부터 안전운전까지 단계별로 교육합니다.</p>
 </div></section>
@@ -233,6 +243,8 @@ ${band("답을 못 찾으셨나요?", "전화 또는 카카오톡으로 직접 �
 function about() {
   const body = `
 <section class="page-head"><div class="wrap">
+  ${pageHero(img("theme-city"), "바이크퀵 회사소개 — 전국 오토바이 퀵서비스 기사 모집 채용 정보 플랫폼")}
+  <span class="badge">${icon("map")} 회사소개</span>
   <h1>회사소개</h1>
   <p class="lead">바이크퀵은 전국 오토바이 퀵서비스 기사 모집과 라이더 정보 제공을 함께하는 채용 정보 플랫폼입니다.</p>
 </div></section>

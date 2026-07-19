@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.js",
+    "images": "python3 scripts/gen-images.py",
     "serve": "node build.js && node scripts/serve.js",
     "dev": "node build.js && node scripts/serve.js",
     "deploy": "wrangler deploy",
