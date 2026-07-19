@@ -11,6 +11,12 @@ export const site = {
   locale: "ko_KR",
   lang: "ko",
 
+  // 검색엔진 사이트 소유확인 메타태그
+  verification: {
+    google: "tLvzDmZ30YWnEXQJb7t1JHxf1OROGMjRlc_Yk5PiBkw",
+    naver: "84ad0723787a7fdc8d9878b8cdf1cfd9a0b1f3fe",
+  },
+
   // 연락처
   contact: {
     phone: "0508-202-4690",

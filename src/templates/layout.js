@@ -135,7 +135,15 @@ export function layout(opts) {
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${canonical}">
 <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#ff5a1f">
+<meta name="theme-color" content="#ff5a1f">${
+    site.verification?.google
+      ? `\n<meta name="google-site-verification" content="${site.verification.google}">`
+      : ""
+  }${
+    site.verification?.naver
+      ? `\n<meta name="naver-site-verification" content="${site.verification.naver}">`
+      : ""
+  }
 <meta property="og:type" content="${ogType}">
 <meta property="og:site_name" content="${esc(site.name)}">
 <meta property="og:title" content="${esc(fullTitle)}">
