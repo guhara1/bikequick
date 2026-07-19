@@ -1,10 +1,12 @@
-// 전국 지역 데이터 (시·도 → 시·군·구 → 주요 역세권)
+// 전국 지역 데이터 (시·도 → 시·군·구 → 역세권/행정구)
 //
 // ⚠️ 도어웨이 페이지 방지 원칙:
 //   키워드만 바꾼 대량 페이지는 금지. 각 지역은 해당 지역의
 //   오더 특성 / 운행 환경 / 교육·안전 안내 등 "고유 정보"를 담습니다.
-//   아래 데이터는 지역별 특성을 반영한 초안이며, 실제 운행 데이터로
-//   지속적으로 보강해 주세요.
+//
+// 아래 배열은 시·도 메타데이터 + 일부 상세(강남 역세권 등) '큐레이션 오버레이'.
+// 전국 전체 행정구역(자치구/시·군/행정구)은 districts.js 에서 병합됩니다.
+import { districts as fullDistricts } from "./districts.js";
 
 export const regions = [
   {
@@ -269,6 +271,30 @@ export const regions = [
     ],
   },
 ];
+
+// 전체 행정구역 병합: districts.js 의 완전한 목록으로 채우되,
+// 위 배열의 큐레이션 상세(orderProfile/environment/stations)는 slug로 보존.
+// 행정시의 하위 행정구(gu)는 stations(3차 레벨)로 매핑.
+for (const r of regions) {
+  const full = fullDistricts[r.slug] || [];
+  const curated = Object.fromEntries((r.districts || []).map((d) => [d.slug, d]));
+  if (!full.length) continue;
+  r.districts = full.map((d) => {
+    const cur = curated[d.slug] || {};
+    const stations = d.gu
+      ? d.gu.map((g) => ({ slug: g.slug, name: g.name, summary: g.summary }))
+      : cur.stations;
+    return {
+      slug: d.slug,
+      name: d.name,
+      summary: cur.summary || d.summary,
+      orderProfile: cur.orderProfile,
+      environment: cur.environment,
+      tips: cur.tips,
+      stations,
+    };
+  });
+}
 
 // 헬퍼: 지역 slug로 조회
 export function findRegion(slug) {
