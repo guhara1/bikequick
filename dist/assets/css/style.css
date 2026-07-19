@@ -347,9 +347,9 @@ figure.fig figcaption { margin-top: .6rem; font-size: .86rem; color: var(--muted
 
 /* ---------- 지역 고품질 페이지 ---------- */
 .region-body { max-width: 900px; margin: 0 auto; padding-bottom: 2rem; }
-.toc { position: sticky; top: 78px; z-index: 20; display: flex; flex-wrap: wrap; gap: .4rem; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 999px; padding: .6rem .8rem; margin: 1.4rem 0 2rem; box-shadow: var(--shadow-xs); }
-.toc a { font-size: .84rem; font-weight: 650; color: var(--ink-2); padding: .38em .8em; border-radius: 999px; white-space: nowrap; }
-.toc a:hover { background: var(--brand-soft); color: var(--brand-dark); }
+.toc { position: sticky; top: 78px; z-index: 20; display: flex; flex-wrap: wrap; gap: .35rem; background: linear-gradient(135deg, var(--navy), var(--navy-2)); border: 1px solid var(--navy-2); border-radius: 16px; padding: .7rem .9rem; margin: 1.4rem 0 2rem; box-shadow: var(--shadow); }
+.toc a { font-size: .85rem; font-weight: 650; color: #d6e0ee; padding: .42em .9em; border-radius: 999px; white-space: nowrap; transition: .14s; }
+.toc a:hover { background: var(--brand); color: #fff; }
 .rsec { padding: 1.6rem 0 1.9rem; border-bottom: 1px solid var(--line-2); scroll-margin-top: 130px; }
 .rsec:last-child { border-bottom: none; }
 .rsec > h2 { font-size: 1.42rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .9rem; }
