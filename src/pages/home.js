@@ -155,22 +155,23 @@ export function homePage() {
 
 <section class="section section-alt">
   <div class="wrap">
-    ${sectionTitle("REVIEWS", "기사 후기")}
+    ${sectionTitle("REVIEWS", "서비스 이용 후기", "바이크퀵 퀵서비스를 이용한 고객이 남긴 실제 후기입니다.")}
     ${
       reviews.length === 0
-        ? `<p class="notice">실제 활동 기사님들의 검증된 후기를 준비하고 있습니다. 바이크퀵은 가짜·예시 후기를 게시하지 않으며, 실제 경험만 확인 후 공개합니다.</p>`
+        ? `<p class="notice">검증된 고객 이용후기를 준비하고 있습니다. 바이크퀵은 가짜·자작 후기를 게시하지 않으며, 실제 후기만 확인 후 공개합니다.</p>`
         : `<div class="card-grid reviews">
       ${reviews
+        .slice(0, 6)
         .map(
           (r) => `<figure class="card review">
-            ${stars(5)}
+            ${stars(r.rating)}
             <blockquote>“${esc(r.text)}”</blockquote>
-            <figcaption><span class="avatar" aria-hidden="true">${esc(r.name.slice(0, 1) || "R")}</span>${esc(r.name)} · ${esc(r.role)} · ${esc(r.region)}</figcaption>
+            <figcaption><span class="avatar" aria-hidden="true">${icon("check")}</span>실제 이용 고객 · ${esc(r.tag)}</figcaption>
           </figure>`
         )
         .join("")}
     </div>
-    <p><a class="link-arrow" href="/community/reviews/">후기 더 보기 ${icon("arrow")}</a></p>`
+    <p style="text-align:center;margin-top:1.5rem"><a class="link-arrow" href="/community/reviews/">서비스 이용 후기 더 보기 ${icon("arrow")}</a></p>`
     }
   </div>
 </section>

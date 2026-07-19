@@ -1,7 +1,8 @@
 import { site } from "../data/site.js";
 import { reviews, reviewsArePlaceholders } from "../data/reviews.js";
 import { layout } from "../templates/layout.js";
-import { esc, icon, sectionTitle, incomeDisclaimer } from "../templates/components.js";
+import { esc, icon, sectionTitle, incomeDisclaimer, stars } from "../templates/components.js";
+import { serviceSchema } from "../templates/schema.js";
 
 const bc = (extra) => [
   { name: "홈", href: "/" },
@@ -11,7 +12,7 @@ const bc = (extra) => [
 
 function communityIndex() {
   const cards = [
-    ["기사 후기", "/community/reviews/", "실제 기사들의 운행 경험과 후기"],
+    ["서비스 이용 후기", "/community/reviews/", "실제 고객이 남긴 퀵서비스 이용후기"],
     ["수익 인증", "/community/income-proof/", "운행 수익 관련 안내와 참고 정보"],
     ["질문답변", "/community/qna/", "가입·근무·수익에 대한 질문과 답변"],
     ["공지사항", "/community/notice/", "모집·운영 관련 공지"],
@@ -46,21 +47,30 @@ function communityIndex() {
 }
 
 function reviewsPage() {
+  const avg = reviews.length
+    ? (reviews.reduce((a, r) => a + (r.rating || 0), 0) / reviews.length).toFixed(1)
+    : "0";
   const body = `
 <section class="page-head"><div class="wrap">
-  <h1>기사 후기</h1>
-  <p class="lead">실제 라이더의 경험을 전합니다.</p>
+  <h1>서비스 이용 후기</h1>
+  <p class="lead">바이크퀵 퀵서비스를 이용한 고객이 남긴 실제 후기입니다. 개인정보는 담지 않으며(익명), 가짜·자작 후기는 게시하지 않습니다.</p>
+  ${
+    reviews.length
+      ? `<p class="review-summary"><strong>${avg}</strong> / 5.0 · 게시된 이용후기 ${reviews.length}건</p>`
+      : ""
+  }
 </div></section>
 <section class="section"><div class="wrap">
   ${
     reviews.length === 0
-      ? `<p class="notice">실제 활동 기사님들의 검증된 후기를 준비하고 있습니다. 바이크퀵은 가짜·예시 후기를 게시하지 않으며, 실제 경험만 확인 후 공개합니다. 후기 참여를 원하시면 <a href="${site.contact.phoneHref}">상담 전화(${esc(site.contact.phone)})</a>로 연락 주세요.</p>`
+      ? `<p class="notice">검증된 고객 이용후기를 준비하고 있습니다. 바이크퀵은 가짜·자작 후기를 게시하지 않으며, 실제 후기만 확인 후 공개합니다. 문의는 <a href="${site.contact.phoneHref}">상담 전화(${esc(site.contact.phone)})</a>로 연락 주세요.</p>`
       : `<div class="card-grid reviews">
     ${reviews
       .map(
         (r) => `<figure class="card review">
+          ${stars(r.rating)}
           <blockquote>“${esc(r.text)}”</blockquote>
-          <figcaption>${esc(r.name)} · ${esc(r.role)} · ${esc(r.region)}</figcaption>
+          <figcaption><span class="avatar" aria-hidden="true">${icon("check")}</span>실제 이용 고객 · ${esc(r.tag)}</figcaption>
         </figure>`
       )
       .join("")}
@@ -68,14 +78,17 @@ function reviewsPage() {
   }
 </div></section>
 `;
+  // Service + 후기/별점 스키마 (실제 게시 후기에서만 자동 생성)
+  const service = serviceSchema();
   return {
     path: "/community/reviews/",
     html: layout({
-      title: "기사 후기",
-      description: "바이크퀵 실제 기사 후기. 투잡·초보·주말 라이더의 경험.",
+      title: "서비스 이용 후기",
+      description: "바이크퀵 퀵서비스 고객이 남긴 실제 이용후기. 배달 속도·정확성·기사 응대에 대한 평가를 확인하세요.",
       path: "/community/reviews/",
       body,
-      breadcrumbs: bc([{ name: "기사 후기", href: "/community/reviews/" }]),
+      jsonld: [service],
+      breadcrumbs: bc([{ name: "서비스 이용 후기", href: "/community/reviews/" }]),
     }),
   };
 }
