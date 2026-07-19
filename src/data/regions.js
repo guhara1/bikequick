@@ -10,6 +10,7 @@ import { districts as fullDistricts } from "./districts.js";
 import { districtContent } from "./districtContent.js";
 import { seoulDong } from "./seoulDong.js";
 import { incheonDong } from "./incheonDong.js";
+import { gyeonggiDong } from "./gyeonggiDong.js";
 
 export const regions = [
   {
@@ -286,27 +287,37 @@ for (const r of regions) {
   r.districts = full.map((d) => {
     const cur = curated[d.slug] || {};
     const c = content[d.slug] || {};
+    // 행정동 → station 노드 변환 헬퍼
+    const toDong = (dn) => ({
+      slug: dn.slug,
+      name: dn.name,
+      summary: dn.order,
+      orderProfile: dn.order,
+      environment: dn.env,
+    });
     const stations = d.gu
       ? d.gu.map((g) => {
           const gc = content[g.slug] || {};
-          return { slug: g.slug, name: g.name, summary: g.summary, orderProfile: gc.order, environment: gc.env };
+          // 경기 행정구(예: 수원 장안구)는 하위 행정동을 4단계로 부착
+          const guDong =
+            r.slug === "gyeonggi" && gyeonggiDong[g.slug]
+              ? gyeonggiDong[g.slug].map(toDong)
+              : undefined;
+          return {
+            slug: g.slug,
+            name: g.name,
+            summary: g.summary,
+            orderProfile: gc.order,
+            environment: gc.env,
+            stations: guDong,
+          };
         })
       : r.slug === "seoul" && seoulDong[d.slug]
-      ? seoulDong[d.slug].map((dn) => ({
-          slug: dn.slug,
-          name: dn.name,
-          summary: dn.order,
-          orderProfile: dn.order,
-          environment: dn.env,
-        }))
+      ? seoulDong[d.slug].map(toDong)
       : r.slug === "incheon" && incheonDong[d.slug]
-      ? incheonDong[d.slug].map((dn) => ({
-          slug: dn.slug,
-          name: dn.name,
-          summary: dn.order,
-          orderProfile: dn.order,
-          environment: dn.env,
-        }))
+      ? incheonDong[d.slug].map(toDong)
+      : r.slug === "gyeonggi" && gyeonggiDong[d.slug]
+      ? gyeonggiDong[d.slug].map(toDong)
       : cur.stations;
     return {
       slug: d.slug,

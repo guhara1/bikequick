@@ -160,12 +160,20 @@ function districtPage(r, d) {
 // 역세권 / 행정구 / 행정동
 function stationPage(r, d, s) {
   const place = `${d.name} ${s.name}`;
+  const children = s.stations || [];
   const siblings = (d.stations || []).filter((x) => x.slug !== s.slug);
-  const areas = siblings.map((x) => ({
-    name: x.name,
-    href: `/regions/${r.slug}/${d.slug}/${x.slug}/`,
-    desc: x.summary,
-  }));
+  // 행정구(하위 행정동 보유)면 소속 행정동을, 아니면 형제 지역을 운행지역으로 노출
+  const areas = children.length
+    ? children.map((x) => ({
+        name: `${s.name} ${x.name}`,
+        href: `/regions/${r.slug}/${d.slug}/${s.slug}/${x.slug}/`,
+        desc: x.summary,
+      }))
+    : siblings.map((x) => ({
+        name: x.name,
+        href: `/regions/${r.slug}/${d.slug}/${x.slug}/`,
+        desc: x.summary,
+      }));
   return buildRegionPage({
     place,
     path: `/regions/${r.slug}/${d.slug}/${s.slug}/`,
