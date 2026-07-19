@@ -92,7 +92,9 @@ function robots() {
     "Allow: /",
     "",
     `Sitemap: ${site.url}/sitemap.xml`,
+    `Sitemap: ${site.url}/sitemap1.xml`,
     `Sitemap: ${site.url}/rss.xml`,
+    `Sitemap: ${site.url}/rss1.xml`,
     "",
   ].join("\n");
 }
@@ -198,10 +200,14 @@ async function build() {
   // 정적 자산 복사
   await copyDir(path.join(__dirname, "assets"), path.join(DIST, "assets"));
 
-  // sitemap / robots / rss
-  await fs.writeFile(path.join(DIST, "sitemap.xml"), sitemap(pages), "utf8");
+  // sitemap / robots / rss (+ 추가 제출용 사본 sitemap1.xml, rss1.xml)
+  const sitemapXml = sitemap(pages);
+  const rssXml = rss();
+  await fs.writeFile(path.join(DIST, "sitemap.xml"), sitemapXml, "utf8");
+  await fs.writeFile(path.join(DIST, "sitemap1.xml"), sitemapXml, "utf8");
   await fs.writeFile(path.join(DIST, "robots.txt"), robots(), "utf8");
-  await fs.writeFile(path.join(DIST, "rss.xml"), rss(), "utf8");
+  await fs.writeFile(path.join(DIST, "rss.xml"), rssXml, "utf8");
+  await fs.writeFile(path.join(DIST, "rss1.xml"), rssXml, "utf8");
 
   const ms = Date.now() - t0;
   console.log(`✓ 빌드 완료: ${pages.length}개 페이지 → dist/ (${ms}ms)`);

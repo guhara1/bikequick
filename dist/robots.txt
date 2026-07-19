@@ -14,4 +14,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://bikequick.pages.dev/sitemap.xml
+Sitemap: https://bikequick.pages.dev/sitemap1.xml
 Sitemap: https://bikequick.pages.dev/rss.xml
+Sitemap: https://bikequick.pages.dev/rss1.xml
