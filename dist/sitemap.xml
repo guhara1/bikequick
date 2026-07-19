@@ -7,6 +7,10 @@
     <priority>1.0</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/hero-main-upload.webp</image:loc></image:image>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
+    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
+    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-income.webp</image:loc></image:image>
+    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-safety.webp</image:loc></image:image>
+    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/jobs/</loc>

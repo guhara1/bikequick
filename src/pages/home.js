@@ -201,7 +201,8 @@ export function homePage() {
       ${posts
         .slice(0, 6)
         .map(
-          (p) => `<a class="card post post-textonly" href="/blog/${p.slug}/">
+          (p) => `<a class="card post" href="/blog/${p.slug}/">
+            <img class="post-thumb" src="${blogImage(p.category)}" alt="${esc(p.title)}" width="600" height="338" loading="lazy" decoding="async">
             <div class="post-body">
               <span class="post-cat">${esc(p.category)}</span>
               <h3>${esc(p.title)}</h3>
