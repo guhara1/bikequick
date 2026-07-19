@@ -87,8 +87,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/</loc>
@@ -96,7 +94,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/gangnam-station/</loc>
@@ -104,7 +101,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/yeoksam-station/</loc>
@@ -112,7 +108,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/seolleung-station/</loc>
@@ -120,7 +115,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/samseong-station/</loc>
@@ -128,7 +122,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/nonhyeon-station/</loc>
@@ -136,7 +129,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangnam/sinnonhyeon-station/</loc>
@@ -144,7 +136,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/songpa/</loc>
@@ -152,7 +143,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/songpa/jamsil-station/</loc>
@@ -160,7 +150,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/songpa/munjeong-station/</loc>
@@ -168,7 +157,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/seocho/</loc>
@@ -176,7 +164,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/seocho/seocho-station/</loc>
@@ -184,7 +171,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/seocho/yangjae-station/</loc>
@@ -192,7 +178,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gwanak/</loc>
@@ -200,7 +185,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/yeongdeungpo/</loc>
@@ -208,7 +192,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/gangseo/</loc>
@@ -216,7 +199,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/seoul/eunpyeong/</loc>
@@ -224,7 +206,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/</loc>
@@ -232,8 +213,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/suwon/</loc>
@@ -241,7 +220,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/seongnam/</loc>
@@ -249,7 +227,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/yongin/</loc>
@@ -257,7 +234,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/goyang/</loc>
@@ -265,7 +241,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeonggi/bucheon/</loc>
@@ -273,7 +248,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/incheon/</loc>
@@ -281,8 +255,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/incheon/namdong/</loc>
@@ -290,7 +262,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/incheon/yeonsu/</loc>
@@ -298,7 +269,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/incheon/bupyeong/</loc>
@@ -306,7 +276,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/busan/</loc>
@@ -314,8 +283,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/busan/busanjin/</loc>
@@ -323,7 +290,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/busan/haeundae/</loc>
@@ -331,7 +297,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/busan/dongnae/</loc>
@@ -339,7 +304,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daegu/</loc>
@@ -347,8 +311,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daegu/jung/</loc>
@@ -356,7 +318,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daegu/dalseo/</loc>
@@ -364,7 +325,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gwangju/</loc>
@@ -372,8 +332,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gwangju/seogu/</loc>
@@ -381,7 +339,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gwangju/gwangsan/</loc>
@@ -389,7 +346,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daejeon/</loc>
@@ -397,8 +353,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daejeon/seogu/</loc>
@@ -406,7 +360,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/daejeon/yuseong/</loc>
@@ -414,7 +367,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/ulsan/</loc>
@@ -422,8 +374,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/ulsan/nam/</loc>
@@ -431,7 +381,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/ulsan/buk/</loc>
@@ -439,7 +388,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/sejong/</loc>
@@ -447,8 +395,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/sejong/sejong-city/</loc>
@@ -456,7 +402,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-urban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gangwon/</loc>
@@ -464,8 +409,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gangwon/wonju/</loc>
@@ -473,7 +416,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gangwon/chuncheon/</loc>
@@ -481,7 +423,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/chungbuk/</loc>
@@ -489,8 +430,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/chungbuk/cheongju/</loc>
@@ -498,7 +437,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/chungnam/</loc>
@@ -506,8 +444,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/chungnam/cheonan/</loc>
@@ -515,7 +451,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/chungnam/asan/</loc>
@@ -523,7 +458,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonbuk/</loc>
@@ -531,8 +465,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-suburban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonbuk/jeonju/</loc>
@@ -540,7 +472,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-suburban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonbuk/gunsan/</loc>
@@ -548,7 +479,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-suburban.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-city.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonnam/</loc>
@@ -556,8 +486,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonnam/suncheon/</loc>
@@ -565,7 +493,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeonnam/gwangyang/</loc>
@@ -573,7 +500,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongbuk/</loc>
@@ -581,8 +507,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongbuk/gumi/</loc>
@@ -590,7 +514,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongbuk/pohang/</loc>
@@ -598,7 +521,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongnam/</loc>
@@ -606,8 +528,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-route.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongnam/changwon/</loc>
@@ -615,7 +535,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/gyeongnam/gimhae/</loc>
@@ -623,7 +542,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-industrial.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-delivery.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeju/</loc>
@@ -631,8 +549,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-rider.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/regions/jeju/jeju-city/</loc>
@@ -640,7 +556,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <image:image><image:loc>https://bikequick.kr/assets/img/photos/region-coastal.webp</image:loc></image:image>
-    <image:image><image:loc>https://bikequick.kr/assets/img/photos/theme-map.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://bikequick.kr/work-guide/</loc>

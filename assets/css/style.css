@@ -345,6 +345,40 @@ figure.fig figcaption { margin-top: .6rem; font-size: .86rem; color: var(--muted
 .tag-link:hover { border-color: var(--brand); color: var(--brand-dark); transform: translateY(-1px); }
 .nearby h3 { font-size: 1.14rem; }
 
+/* ---------- 지역 고품질 페이지 ---------- */
+.region-body { max-width: 900px; margin: 0 auto; padding-bottom: 2rem; }
+.toc { position: sticky; top: 78px; z-index: 20; display: flex; flex-wrap: wrap; gap: .4rem; background: rgba(255,255,255,.92); backdrop-filter: blur(8px); border: 1px solid var(--line); border-radius: 999px; padding: .6rem .8rem; margin: 1.4rem 0 2rem; box-shadow: var(--shadow-xs); }
+.toc a { font-size: .84rem; font-weight: 650; color: var(--ink-2); padding: .38em .8em; border-radius: 999px; white-space: nowrap; }
+.toc a:hover { background: var(--brand-soft); color: var(--brand-dark); }
+.rsec { padding: 1.6rem 0 1.9rem; border-bottom: 1px solid var(--line-2); scroll-margin-top: 130px; }
+.rsec:last-child { border-bottom: none; }
+.rsec > h2 { font-size: 1.42rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: .9rem; }
+.rsec > h2::before { content: ""; display: inline-block; width: 26px; height: 3px; vertical-align: middle; background: linear-gradient(90deg, var(--brand), var(--brand-2)); border-radius: 3px; margin-right: .55rem; }
+.rsec h3 { font-size: 1.08rem; font-weight: 720; margin: 1.2rem 0 .3rem; }
+.rsec p { color: var(--ink-2); }
+.rsec .muted-note { color: var(--muted); font-size: .9rem; }
+.summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; align-items: start; }
+.summary-grid .spec-list { background: var(--bg-warm); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem 1.2rem; margin: 0; }
+.summary-cta p { font-size: .95rem; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: .1rem 1.4rem; }
+.two-col li { padding: .3rem 0; }
+.area-list { display: grid; gap: 1rem; }
+.area-item { background: #fff; border: 1px solid var(--line); border-left: 3px solid var(--brand); border-radius: var(--radius-sm); padding: 1rem 1.2rem; }
+.area-item h3 { margin: 0 0 .25rem; font-size: 1.02rem; }
+.area-item h3 a { color: var(--brand-dark); }
+.area-item p { margin: 0; font-size: .95rem; }
+.work-grid { grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1rem; }
+.work-grid .card { padding: 1.1rem 1.2rem; }
+.work-grid .card h3 { margin: 0 0 .3rem; }
+.formula { background: var(--brand-soft); border: 1px solid #ffd9c6; border-radius: var(--radius-sm); padding: .8rem 1.1rem; font-weight: 650; color: var(--brand-dark); }
+.rsec-apply { background: linear-gradient(135deg, var(--bg-warm), #fff); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.4rem; }
+.rsec-apply .cta-group { justify-content: flex-start; }
+.related-links .tag-grid { margin-top: .3rem; }
+@media (max-width: 640px) {
+  .summary-grid, .two-col { grid-template-columns: 1fr; }
+  .toc { position: static; }
+}
+
 /* ---------- Jobs ---------- */
 .jobs-grid { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
 .job-card { display: flex; flex-direction: column; }
