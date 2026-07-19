@@ -282,7 +282,7 @@ function contact() {
 <section class="section"><div class="wrap contact-grid">
   <a class="card contact-card" href="${site.contact.phoneHref}">
     <span class="benefit-ico">${icon("phone")}</span>
-    <h2>전화 상담</h2><p>${esc(site.contact.phone)}</p><small>${esc(site.contact.hours)}</small>
+    <h2>전화 상담</h2><p>${esc(site.contact.phone)}</p><small>${esc(site.contact.phoneLabel)} · ${esc(site.contact.hours)}</small>
   </a>
   <a class="card contact-card" href="${site.contact.kakao}" target="_blank" rel="noopener">
     <span class="benefit-ico">${icon("chat")}</span>

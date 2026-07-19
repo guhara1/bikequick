@@ -11,13 +11,14 @@ export const site = {
   locale: "ko_KR",
   lang: "ko",
 
-  // 연락처 — ⚠️ 실제 값으로 교체 필요 (현재는 예시 placeholder)
+  // 연락처
   contact: {
-    phone: "1600-0000",
-    phoneHref: "tel:1600-0000",
+    phone: "0508-202-4690",
+    phoneHref: "tel:0508-202-4690",
+    phoneLabel: "퀵기사 모집 상담 · 고객센터",
     kakao: "https://pf.kakao.com/_bikequick", // ⚠️ 실제 카카오톡 채널로 교체
     kakaoLabel: "카카오톡 채널",
-    email: "recruit@bikequick.kr",
+    email: "recruit@bikequick.kr", // ⚠️ 실제 이메일로 교체
     hours: "평일/주말 09:00 ~ 21:00 상담 가능",
   },
 
