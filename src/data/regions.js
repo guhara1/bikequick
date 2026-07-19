@@ -9,6 +9,7 @@
 import { districts as fullDistricts } from "./districts.js";
 import { districtContent } from "./districtContent.js";
 import { seoulDong } from "./seoulDong.js";
+import { incheonDong } from "./incheonDong.js";
 
 export const regions = [
   {
@@ -292,6 +293,14 @@ for (const r of regions) {
         })
       : r.slug === "seoul" && seoulDong[d.slug]
       ? seoulDong[d.slug].map((dn) => ({
+          slug: dn.slug,
+          name: dn.name,
+          summary: dn.order,
+          orderProfile: dn.order,
+          environment: dn.env,
+        }))
+      : r.slug === "incheon" && incheonDong[d.slug]
+      ? incheonDong[d.slug].map((dn) => ({
           slug: dn.slug,
           name: dn.name,
           summary: dn.order,
