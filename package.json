@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node build.js",
     "images": "python3 scripts/gen-images.py",
+    "photos:import": "python3 scripts/import-photos.py",
     "serve": "node build.js && node scripts/serve.js",
     "dev": "node build.js && node scripts/serve.js",
     "deploy": "wrangler deploy",
