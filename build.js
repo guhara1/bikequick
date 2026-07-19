@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { site } from "./src/data/site.js";
+import { posts } from "./src/data/blog.js";
 import { homePage } from "./src/pages/home.js";
 import { jobsPages } from "./src/pages/jobs.js";
 import { regionsPages } from "./src/pages/regions.js";
@@ -73,7 +74,80 @@ function sitemap(pages) {
 }
 
 function robots() {
-  return `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`;
+  // 주요 검색봇(구글·네이버 Yeti·빙·다음) 명시 허용 + 사이트맵/RSS 안내
+  return [
+    "User-agent: Googlebot",
+    "Allow: /",
+    "",
+    "User-agent: Yeti", // 네이버 검색 로봇
+    "Allow: /",
+    "",
+    "User-agent: Daumoa", // 다음 검색 로봇
+    "Allow: /",
+    "",
+    "User-agent: bingbot",
+    "Allow: /",
+    "",
+    "User-agent: *",
+    "Allow: /",
+    "",
+    `Sitemap: ${site.url}/sitemap.xml`,
+    `Sitemap: ${site.url}/rss.xml`,
+    "",
+  ].join("\n");
+}
+
+// XML 특수문자 이스케이프
+function xmlEsc(s = "") {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+// 날짜 → RFC-822 (RSS pubDate). KST 09:00 기준으로 안정 변환.
+function rfc822(dateStr) {
+  const d = new Date(`${dateStr}T09:00:00+09:00`);
+  return isNaN(d.getTime()) ? new Date().toUTCString() : d.toUTCString();
+}
+
+// RSS 2.0 피드 — 블로그 신규 글을 네이버·구글이 빠르게 수집하도록
+function rss() {
+  const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1));
+  const build = new Date().toUTCString();
+  const items = sorted
+    .map((p) => {
+      const link = `${site.url}/blog/${p.slug}/`;
+      return [
+        "    <item>",
+        `      <title>${xmlEsc(p.title)}</title>`,
+        `      <link>${link}</link>`,
+        `      <guid isPermaLink="true">${link}</guid>`,
+        `      <pubDate>${rfc822(p.date)}</pubDate>`,
+        p.category ? `      <category>${xmlEsc(p.category)}</category>` : "",
+        `      <description>${xmlEsc(p.excerpt || "")}</description>`,
+        "    </item>",
+      ]
+        .filter(Boolean)
+        .join("\n");
+    })
+    .join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>${xmlEsc(site.name)} 블로그 · 라이더 가이드</title>
+    <link>${site.url}/blog/</link>
+    <atom:link href="${site.url}/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>${xmlEsc(site.description)}</description>
+    <language>ko</language>
+    <lastBuildDate>${build}</lastBuildDate>
+    <generator>bikequick-static</generator>
+${items}
+  </channel>
+</rss>
+`;
 }
 
 function notFoundPage() {
@@ -124,13 +198,14 @@ async function build() {
   // 정적 자산 복사
   await copyDir(path.join(__dirname, "assets"), path.join(DIST, "assets"));
 
-  // sitemap / robots
+  // sitemap / robots / rss
   await fs.writeFile(path.join(DIST, "sitemap.xml"), sitemap(pages), "utf8");
   await fs.writeFile(path.join(DIST, "robots.txt"), robots(), "utf8");
+  await fs.writeFile(path.join(DIST, "rss.xml"), rss(), "utf8");
 
   const ms = Date.now() - t0;
   console.log(`✓ 빌드 완료: ${pages.length}개 페이지 → dist/ (${ms}ms)`);
-  console.log(`  sitemap.xml, robots.txt, 404.html 생성`);
+  console.log(`  sitemap.xml, rss.xml, robots.txt, 404.html 생성`);
 }
 
 build().catch((err) => {

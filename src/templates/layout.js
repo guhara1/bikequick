@@ -153,6 +153,8 @@ export function layout(opts) {
 <meta property="og:image" content="${site.url + site.ogImage}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/rss+xml" title="${esc(site.name)} 블로그 RSS" href="/rss.xml">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="/assets/css/style.css?v=${site.assetVersion || "1"}">
