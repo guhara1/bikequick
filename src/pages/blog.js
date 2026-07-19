@@ -98,6 +98,16 @@ function blogPost(p) {
   </div>
 </div></section>`;
 
+  // 본문 글자 수(공백 제외 기준) 계산
+  const wordCount = p.body.reduce((n, s) => n + (s.h.length + s.p.length), 0) + p.excerpt.length;
+  const keywords = [
+    p.category,
+    "오토바이 퀵서비스",
+    "퀵기사",
+    "라이더",
+    "배달 부업",
+    "퀵서비스 기사 모집",
+  ].join(", ");
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -107,14 +117,21 @@ function blogPost(p) {
     dateModified: p.date,
     inLanguage: "ko",
     articleSection: p.category,
-    mainEntityOfPage: site.url + path,
+    keywords,
+    wordCount,
+    mainEntityOfPage: { "@type": "WebPage", "@id": site.url + path },
     author: { "@type": "Organization", name: site.name, url: site.url },
     publisher: {
       "@type": "Organization",
       name: site.name,
       logo: { "@type": "ImageObject", url: site.url + site.logo },
     },
-    image: site.url + blogImage(p.category),
+    image: {
+      "@type": "ImageObject",
+      url: site.url + blogImage(p.category),
+      width: 1200,
+      height: 525,
+    },
   };
   return {
     path,

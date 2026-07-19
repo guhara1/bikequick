@@ -350,6 +350,18 @@ figure.fig figcaption { margin-top: .6rem; font-size: .86rem; color: var(--muted
 .tag-link:hover { border-color: var(--brand); color: var(--brand-dark); transform: translateY(-1px); }
 .nearby h3 { font-size: 1.14rem; }
 
+/* ---------- 롱테일 주제 허브 ---------- */
+.topic-hub { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.6rem; }
+.topic-col { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem 1.4rem; box-shadow: var(--shadow-xs); }
+.topic-col > h3 { font-size: 1.06rem; margin: 0 0 1rem; padding-bottom: .7rem; border-bottom: 2px solid var(--brand-soft); color: var(--navy); }
+.topic-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .55rem; }
+.topic-list li { margin: 0; }
+.topic-list a { display: block; padding: .7rem .85rem; border-radius: 11px; border: 1px solid transparent; transition: background .15s, border-color .15s, transform .15s; }
+.topic-list a:hover { background: var(--bg-warm); border-color: var(--line); transform: translateX(2px); }
+.topic-list strong { display: block; font-size: .95rem; font-weight: 700; color: var(--ink); line-height: 1.4; }
+.topic-list span { display: block; margin-top: .25rem; font-size: .84rem; color: var(--ink-2); line-height: 1.55; }
+@media (max-width: 860px) { .topic-hub { grid-template-columns: 1fr; gap: 1rem; } }
+
 /* ---------- 지역 고품질 페이지 ---------- */
 .region-body { max-width: 900px; margin: 0 auto; padding-bottom: 2rem; }
 .toc { position: sticky; top: 78px; z-index: 20; display: flex; flex-wrap: wrap; gap: .35rem; background: linear-gradient(135deg, var(--navy), var(--navy-2)); border: 1px solid var(--navy-2); border-radius: 16px; padding: .7rem .9rem; margin: 1.4rem 0 2rem; box-shadow: var(--shadow); }

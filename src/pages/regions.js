@@ -3,11 +3,23 @@ import { regions } from "../data/regions.js";
 import { regionHero } from "../data/images.js";
 import { layout } from "../templates/layout.js";
 import { esc, icon, ctaButtons, pageHero } from "../templates/components.js";
+import { serviceSchema, itemListSchema } from "../templates/schema.js";
+import { regionGuideLinks } from "../data/longtail.js";
 import {
   jumpMenu, summaryBox, reasonSection, areasSection,
   conditionsSection, beginnerSection, tipsSection,
   regionFaq, applySection, relatedLinks,
 } from "../templates/regionSections.js";
+
+// href 기준 중복 제거
+function dedupeLinks(links) {
+  const seen = new Set();
+  return (links || []).filter((l) => {
+    if (!l || !l.href || seen.has(l.href)) return false;
+    seen.add(l.href);
+    return true;
+  });
+}
 
 // 공통 직무 내부링크
 const jobLinks = [
@@ -22,6 +34,8 @@ const jobLinks = [
 // 고품질 지역 페이지 조립
 function buildRegionPage({ place, path, node, parent, areas, related, breadcrumbs, heroSlug, description }) {
   const faq = regionFaq(place);
+  // 롱테일 가이드·블로그 링크를 관련 안내에 병합(중복 href 제거)
+  const relatedAll = dedupeLinks([...(related || []), ...regionGuideLinks]);
   const body = `
 <section class="page-head region-head">
   <div class="wrap">
@@ -43,10 +57,14 @@ function buildRegionPage({ place, path, node, parent, areas, related, breadcrumb
   ${conditionsSection(place)}
   ${faq.html}
   ${applySection(place)}
-  ${relatedLinks(related)}
+  ${relatedLinks(relatedAll)}
 </div>
 `;
-  // 스키마: FAQPage (JobPosting은 지원자 비용 정책 충돌 우려로 지역 페이지에 미적용)
+  // 스키마: FAQPage + Service(모집) + ItemList(운행지역)
+  //   JobPosting은 지원자 비용 정책 충돌 우려로 지역 페이지에 미적용.
+  //   Service 는 실제 후기가 있을 때만 별점/후기가 자동 부착됩니다(허위 별점 없음).
+  const service = serviceSchema(place);
+  const areaList = itemListSchema(`${place} 주요 운행지역`, areas);
   return {
     path,
     html: layout({
@@ -54,7 +72,7 @@ function buildRegionPage({ place, path, node, parent, areas, related, breadcrumb
       description,
       path,
       body,
-      jsonld: [faq.schema],
+      jsonld: [faq.schema, service, areaList].filter(Boolean),
       breadcrumbs,
     }),
   };

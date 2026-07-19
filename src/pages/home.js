@@ -4,8 +4,10 @@ import { faq } from "../data/faq.js";
 import { reviews, reviewsArePlaceholders } from "../data/reviews.js";
 import { posts } from "../data/blog.js";
 import { stats, whyUs, process } from "../data/trust.js";
+import { guideTopics, guidePages, jobTopics } from "../data/longtail.js";
 import { img, blogImage } from "../data/images.js";
 import { layout } from "../templates/layout.js";
+import { serviceSchema, itemListSchema } from "../templates/schema.js";
 import {
   esc,
   icon,
@@ -216,6 +218,35 @@ export function homePage() {
   </div>
 </section>
 
+<section class="section section-alt">
+  <div class="wrap">
+    ${sectionTitle("GUIDE", "주제별 모집·가이드 바로가기", "찾으시는 주제를 골라 바로 이동하세요. 초보 시작부터 투잡·수익·보험·안전까지.")}
+    <div class="topic-hub">
+      ${[
+        ["직무별 기사 모집", jobTopics],
+        ["실무 가이드", guidePages],
+        ["라이더 블로그", guideTopics],
+      ]
+        .map(
+          ([label, items]) => `<div class="topic-col">
+          <h3>${esc(label)}</h3>
+          <ul class="topic-list">
+            ${items
+              .map(
+                (t) => `<li><a href="${t.href}">
+                  <strong>${esc(t.name)}</strong>
+                  ${t.desc ? `<span>${esc(t.desc)}</span>` : ""}
+                </a></li>`
+              )
+              .join("")}
+          </ul>
+        </div>`
+        )
+        .join("")}
+    </div>
+  </div>
+</section>
+
 <section class="cta-band">
   <div class="wrap">
     <h2>지금 바로 시작하세요</h2>
@@ -235,6 +266,18 @@ export function homePage() {
     })),
   };
 
+  // 모집 서비스 스키마(전국) — 실제 후기가 있으면 별점/후기 자동 부착
+  const service = serviceSchema();
+  // 주제 허브·직무·지역 내부링크 ItemList
+  const topicList = itemListSchema(
+    "주제별 모집·가이드",
+    [...jobTopics, ...guidePages, ...guideTopics]
+  );
+  const regionList = itemListSchema(
+    "전국 지역별 퀵서비스 기사 모집",
+    regions.map((r) => ({ name: `${r.name} 퀵서비스 기사 모집`, href: `/regions/${r.slug}/` }))
+  );
+
   return {
     path: "/",
     html: layout({
@@ -242,7 +285,7 @@ export function homePage() {
       description: site.description,
       path: "/",
       body,
-      jsonld: [faqSchema],
+      jsonld: [faqSchema, service, topicList, regionList].filter(Boolean),
     }),
   };
 }
