@@ -2,35 +2,16 @@
 // ⚠️ 후기/별점 스키마는 reviews.js 의 "실제 검증 후기"에서만 생성합니다.
 //    데이터가 없으면 아무 것도 출력하지 않습니다(허위 별점·자작 리뷰 금지).
 import { site } from "../data/site.js";
-import { reviews } from "../data/reviews.js";
 
-// 실제 후기가 있을 때만 AggregateRating + Review 필드를 반환 (없으면 빈 객체)
+// 후기 별점 구조화 데이터(AggregateRating/Review)는 의도적으로 출력하지 않습니다.
+//   구글은 "자사 사업체에 대해 자체 수집한 후기(self-serving review)"의 별점
+//   마크업을 리치결과에서 허용하지 않으며(별점 미노출·수동조치 리스크),
+//   큐레이션된 후기의 평균 별점 마크업도 정책 위반 소지가 있습니다.
+//   → 후기·평균 별점은 "화면(가시 콘텐츠)"으로만 노출합니다.
+//   검색결과 별점은 네이버 플레이스·구글 비즈니스 프로필로 확보하세요.
+//   (실데이터는 reviews.js 에 있으므로, 정책이 허용되는 방식이 필요하면 여기서 재활성화)
 export function ratingFields() {
-  const list = (reviews || []).filter((r) => r && r.text);
-  if (!list.length) return {};
-  const scores = list.map((r) => Number(r.rating) || 5);
-  const avg = (scores.reduce((a, b) => a + b, 0) / scores.length).toFixed(1);
-  return {
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: avg,
-      reviewCount: list.length,
-      bestRating: 5,
-      worstRating: 1,
-    },
-    review: list.map((r) => ({
-      "@type": "Review",
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: Number(r.rating) || 5,
-        bestRating: 5,
-        worstRating: 1,
-      },
-      author: { "@type": "Person", name: r.name || "익명" },
-      datePublished: r.date || undefined,
-      reviewBody: r.text,
-    })),
-  };
+  return {};
 }
 
 // 모집 서비스 스키마 — 지역명이 있으면 areaServed 로 지정
