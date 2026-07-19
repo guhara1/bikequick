@@ -147,7 +147,7 @@ export function layout(opts) {
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/style.css?v=${site.assetVersion || "1"}">
 ${jsonLdBlock(schemas)}
 </head>
 <body>
@@ -230,7 +230,7 @@ ${body}
     <p>© ${new Date().getFullYear()} ${esc(site.name)}. 운영 플랫폼: ${esc(site.company.platform)}. 본 사이트의 수익 예시는 참고용이며 특정 금액을 보장하지 않습니다.</p>
   </div>
 </footer>
-<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/main.js?v=${site.assetVersion || "1"}" defer></script>
 </body>
 </html>`;
 }

@@ -97,6 +97,8 @@ function notFoundPage() {
 
 async function build() {
   const t0 = Date.now();
+  // 자산 캐시 무효화 버전(빌드 시각 기반) — CSS/JS 변경이 즉시 반영되도록
+  site.assetVersion = t0.toString(36);
   await rmDist();
   await fs.mkdir(DIST, { recursive: true });
 
