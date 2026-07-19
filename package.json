@@ -10,7 +10,8 @@
     "serve": "node build.js && node scripts/serve.js",
     "dev": "node build.js && node scripts/serve.js",
     "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "preview": "wrangler dev",
+    "photos:fetch": "python3 scripts/fetch-photos.py"
   },
   "keywords": [
     "퀵서비스",

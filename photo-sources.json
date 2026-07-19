@@ -1,0 +1,17 @@
+{
+  "_설명": "인터넷 열린 환경에서 각 슬롯에 무료 이미지 사이트의 이미지 URL을 채운 뒤 `python3 scripts/fetch-photos.py` 실행. (_로 시작하는 키는 무시됨)",
+  "hero-jobs": "",
+  "hero-blog": "",
+  "region-urban": "",
+  "region-industrial": "",
+  "region-suburban": "",
+  "region-coastal": "",
+  "theme-rider": "",
+  "theme-city": "",
+  "theme-delivery": "",
+  "theme-route": "",
+  "theme-income": "",
+  "theme-safety": "",
+  "theme-map": "",
+  "theme-night": ""
+}
