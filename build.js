@@ -59,10 +59,12 @@ function sitemap(pages) {
       const loc = site.url + pg.path;
       const priority =
         pg.path === "/" ? "1.0" : pg.path.split("/").length <= 3 ? "0.8" : "0.6";
-      // 페이지의 대표 이미지(첫 히어로/사진)를 이미지 사이트맵에 포함
-      const imgs = [...new Set([...(pg.html || "").matchAll(/\/assets\/img\/photos\/[a-z0-9-]+\.webp/g)].map((m) => m[0]))].slice(0, 4);
+      // 페이지의 대표 이미지(로컬 + Unsplash)를 이미지 사이트맵에 포함
+      const local = [...(pg.html || "").matchAll(/\/assets\/img\/photos\/[a-z0-9-]+\.webp/g)].map((m) => site.url + m[0]);
+      const remote = [...(pg.html || "").matchAll(/https:\/\/images\.unsplash\.com\/photo-[^"'\s]+/g)].map((m) => m[0].replace(/&/g, "&amp;"));
+      const imgs = [...new Set([...local, ...remote])].slice(0, 6);
       const imgXml = imgs
-        .map((src) => `\n    <image:image><image:loc>${site.url}${src}</image:loc></image:image>`)
+        .map((src) => `\n    <image:image><image:loc>${src}</image:loc></image:image>`)
         .join("");
       return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${priority}</priority>${imgXml}\n  </url>`;
     })
