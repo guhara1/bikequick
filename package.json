@@ -6,7 +6,9 @@
   "scripts": {
     "build": "node build.js",
     "serve": "node build.js && node scripts/serve.js",
-    "dev": "node build.js && node scripts/serve.js"
+    "dev": "node build.js && node scripts/serve.js",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "keywords": [
     "퀵서비스",
@@ -18,5 +20,8 @@
     "투잡"
   ],
   "license": "UNLICENSED",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^4.112.0"
+  }
 }
