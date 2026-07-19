@@ -190,13 +190,50 @@ function stationPage(r, d, s) {
   });
 }
 
+// 4단계: 행정구 하위 행정동 (예: 수원시 → 장안구 → 정자동)
+function subStationPage(r, d, s, dn) {
+  const place = `${s.name} ${dn.name}`;
+  const siblings = (s.stations || []).filter((x) => x.slug !== dn.slug);
+  const areas = siblings.map((x) => ({
+    name: x.name,
+    href: `/regions/${r.slug}/${d.slug}/${s.slug}/${x.slug}/`,
+    desc: x.summary,
+  }));
+  return buildRegionPage({
+    place,
+    path: `/regions/${r.slug}/${d.slug}/${s.slug}/${dn.slug}/`,
+    node: dn,
+    parent: s.orderProfile ? s : d,
+    areas,
+    related: [
+      { name: `${d.name} ${s.name} 기사모집`, href: `/regions/${r.slug}/${d.slug}/${s.slug}/` },
+      { name: `${d.name} 전체 기사모집`, href: `/regions/${r.slug}/${d.slug}/` },
+      ...siblings.slice(0, 3).map((x) => ({ name: `${x.name} 기사모집`, href: `/regions/${r.slug}/${d.slug}/${s.slug}/${x.slug}/` })),
+      ...jobLinks,
+    ],
+    heroSlug: r.slug,
+    description: `${place} 일대 오토바이 퀵서비스 기사를 모집합니다. 초보자·경력자·투잡 지원 가능하며 근무 방식, 수익 구조, 수수료, 준비물, 가입 절차와 ${dn.name} 인근 운행지역을 확인하세요.`,
+    breadcrumbs: [
+      { name: "홈", href: "/" },
+      { name: "지역모집", href: "/regions/" },
+      { name: r.name, href: `/regions/${r.slug}/` },
+      { name: d.name, href: `/regions/${r.slug}/${d.slug}/` },
+      { name: s.name, href: `/regions/${r.slug}/${d.slug}/${s.slug}/` },
+      { name: dn.name, href: `/regions/${r.slug}/${d.slug}/${s.slug}/${dn.slug}/` },
+    ],
+  });
+}
+
 export function regionsPages() {
   const pages = [regionsIndex()];
   for (const r of regions) {
     pages.push(regionPage(r));
     for (const d of r.districts || []) {
       pages.push(districtPage(r, d));
-      for (const s of d.stations || []) pages.push(stationPage(r, d, s));
+      for (const s of d.stations || []) {
+        pages.push(stationPage(r, d, s));
+        for (const dn of s.stations || []) pages.push(subStationPage(r, d, s, dn));
+      }
     }
   }
   return pages;
