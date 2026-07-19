@@ -53,11 +53,9 @@ function reviewsPage() {
 </div></section>
 <section class="section"><div class="wrap">
   ${
-    reviewsArePlaceholders
-      ? `<p class="notice">아래 후기는 <strong>레이아웃 예시</strong>입니다. 운영 시 실제 검증된 기사 후기로 교체되며, 가짜 후기는 게시하지 않습니다.</p>`
-      : ""
-  }
-  <div class="card-grid reviews">
+    reviews.length === 0
+      ? `<p class="notice">실제 활동 기사님들의 검증된 후기를 준비하고 있습니다. 바이크퀵은 가짜·예시 후기를 게시하지 않으며, 실제 경험만 확인 후 공개합니다. 후기 참여를 원하시면 <a href="${site.contact.phoneHref}">상담 전화(${esc(site.contact.phone)})</a>로 연락 주세요.</p>`
+      : `<div class="card-grid reviews">
     ${reviews
       .map(
         (r) => `<figure class="card review">
@@ -66,7 +64,8 @@ function reviewsPage() {
         </figure>`
       )
       .join("")}
-  </div>
+  </div>`
+  }
 </div></section>
 `;
   return {

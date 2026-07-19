@@ -155,22 +155,21 @@ export function homePage() {
   <div class="wrap">
     ${sectionTitle("REVIEWS", "기사 후기")}
     ${
-      reviewsArePlaceholders
-        ? `<p class="notice">아래 후기는 <strong>레이아웃 예시</strong>입니다. 실제 검증된 기사 후기로 교체 예정이며, 가짜 후기는 게시하지 않습니다.</p>`
-        : ""
-    }
-    <div class="card-grid reviews">
+      reviews.length === 0
+        ? `<p class="notice">실제 활동 기사님들의 검증된 후기를 준비하고 있습니다. 바이크퀵은 가짜·예시 후기를 게시하지 않으며, 실제 경험만 확인 후 공개합니다.</p>`
+        : `<div class="card-grid reviews">
       ${reviews
         .map(
           (r) => `<figure class="card review">
             ${stars(5)}
             <blockquote>“${esc(r.text)}”</blockquote>
-            <figcaption><span class="avatar" aria-hidden="true">${esc(r.name.replace(/[()예시\s]/g, "").slice(0, 1) || "R")}</span>${esc(r.name)} · ${esc(r.role)} · ${esc(r.region)}</figcaption>
+            <figcaption><span class="avatar" aria-hidden="true">${esc(r.name.slice(0, 1) || "R")}</span>${esc(r.name)} · ${esc(r.role)} · ${esc(r.region)}</figcaption>
           </figure>`
         )
         .join("")}
     </div>
-    <p><a class="link-arrow" href="/community/reviews/">후기 더 보기 ${icon("arrow")}</a></p>
+    <p><a class="link-arrow" href="/community/reviews/">후기 더 보기 ${icon("arrow")}</a></p>`
+    }
   </div>
 </section>
 
