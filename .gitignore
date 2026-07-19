@@ -1,0 +1,9 @@
+# 빌드 산출물 (npm run build 로 생성)
+/dist/
+
+# 의존성 (현재 외부 의존성 없음)
+/node_modules/
+
+# 로그/임시
+*.log
+.DS_Store

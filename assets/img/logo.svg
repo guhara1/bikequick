@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="48" viewBox="0 0 200 48" role="img" aria-label="바이크퀵">
+  <rect width="200" height="48" rx="10" fill="#14243a"/>
+  <text x="16" y="31" font-family="Pretendard, system-ui, sans-serif" font-size="20" font-weight="800" fill="#ffffff">바이크</text>
+  <text x="74" y="31" font-family="Pretendard, system-ui, sans-serif" font-size="20" font-weight="800" fill="#ff5a1f">퀵</text>
+  <text x="100" y="31" font-family="system-ui, sans-serif" font-size="18">🏍️</text>
+</svg>

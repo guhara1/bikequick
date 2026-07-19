@@ -1,0 +1,22 @@
+{
+  "name": "bikequick",
+  "version": "1.0.0",
+  "description": "전국 오토바이 퀵서비스 기사 모집 채용 정보 플랫폼 (정적 사이트 생성기)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "serve": "node build.js && node scripts/serve.js",
+    "dev": "node build.js && node scripts/serve.js"
+  },
+  "keywords": [
+    "퀵서비스",
+    "오토바이",
+    "기사모집",
+    "라이더",
+    "채용",
+    "부업",
+    "투잡"
+  ],
+  "license": "UNLICENSED",
+  "private": true
+}
