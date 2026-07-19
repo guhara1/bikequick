@@ -18,6 +18,14 @@ import {
 
 export function homePage() {
   const body = `
+<section class="home-banner">
+  <div class="wrap">
+    <a href="/join/" aria-label="전국 오토바이 퀵서비스 기사 모집 · 지금 지원하기">
+      <img src="${img("hero-main-upload")}" alt="전국 오토바이 퀵서비스 기사 모집·채용 — 전국 지역 근무, 자유로운 시간 선택, 안정적인 수입, 초보 환영·교육 지원. 지금 바로 지원하세요." width="1400" height="788" loading="eager" fetchpriority="high" decoding="async">
+    </a>
+  </div>
+</section>
+
 <section class="hero">
   <div class="wrap hero-inner">
     <div class="hero-copy">
@@ -34,7 +42,7 @@ export function homePage() {
       <p class="hero-note">투잡·부업·주말·초보 라이더 모두 환영합니다.</p>
     </div>
     <div class="hero-visual">
-      <img class="hero-img" src="${img("hero-home")}" alt="전국 오토바이 퀵서비스 기사 모집 — 도심을 달리는 퀵 라이더" width="1200" height="540" loading="eager" fetchpriority="high" decoding="async">
+      <img class="hero-img" src="${img("hero-home")}" alt="전국 오토바이 퀵서비스 기사 모집 — 도심을 달리는 퀵 라이더" width="1200" height="540" loading="lazy" decoding="async">
       <div class="hero-card" id="status">
         <h3>실시간 모집현황</h3>
         <p class="status-line"><span class="dot"></span> 전국 17개 시·도 모집 중</p>

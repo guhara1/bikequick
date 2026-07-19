@@ -123,13 +123,20 @@ strong { font-weight: 700; }
 .header-cta { margin-left: .5rem; }
 .nav-toggle { display: none; }
 
+/* ---------- 상단 배너(업로드 이미지) ---------- */
+.home-banner { background: var(--bg-warm); padding: 1.4rem 0 0; }
+.home-banner .wrap { padding: 0 22px; }
+.home-banner a { display: block; }
+.home-banner img { width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line); transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.home-banner a:hover img { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+
 /* ---------- Hero ---------- */
 .hero { position: relative; background: linear-gradient(155deg, var(--navy) 0%, var(--navy-2) 55%, #24344d 100%); color: #fff; overflow: hidden; }
 .hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(900px 420px at 82% 8%, rgba(255,90,31,.28), transparent 60%), radial-gradient(700px 400px at 10% 100%, rgba(60,110,170,.35), transparent 55%); }
 .hero-inner { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; gap: 3rem; align-items: center; padding: clamp(3rem, 6vw, 5.5rem) 0; }
 .hero .badge { display: inline-flex; align-items: center; gap: .5rem; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff; font-weight: 650; font-size: .82rem; padding: .5em 1em; border-radius: 999px; margin-bottom: 1.2rem; backdrop-filter: blur(6px); }
 .hero .badge .ico { color: var(--brand-2); }
-.hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 850; letter-spacing: -.04em; line-height: 1.15; }
+.hero h1 { color: #fff; font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 850; letter-spacing: -.04em; line-height: 1.15; }
 .hero h1 .hl { background: linear-gradient(120deg, var(--brand-2), var(--brand)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .hero-sub { color: #c3cfdf; font-size: 1.1rem; margin: 1.2rem 0 0; max-width: 30em; }
 .hero-points { list-style: none; display: flex; flex-wrap: wrap; gap: .7rem 1.5rem; padding: 0; margin: 1.5rem 0 0; }
