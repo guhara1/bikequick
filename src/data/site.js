@@ -6,8 +6,8 @@ export const site = {
   tagline: "전국 오토바이 퀵서비스 기사 모집",
   description:
     "전국 오토바이 퀵서비스 기사 모집 · 채용 정보 플랫폼. 출퇴근 자유, 예치금 0원, 비대면 가입. 초보·투잡·주말 라이더 환영. 지역별 모집 정보와 기사 가이드를 제공합니다.",
-  // 배포 도메인 (예: https://bikequick.kr) — 실제 도메인으로 교체
-  url: "https://bikequick.kr",
+  // 배포 도메인 (Cloudflare Pages)
+  url: "https://bikequick.pages.dev",
   locale: "ko_KR",
   lang: "ko",
 

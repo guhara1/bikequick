@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://bikequick.kr/sitemap.xml
+Sitemap: https://bikequick.pages.dev/sitemap.xml
