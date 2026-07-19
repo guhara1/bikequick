@@ -93,8 +93,12 @@ export function layout(opts) {
     ogType = "website",
   } = opts;
 
+  // SEO 타이틀: "모집"과 "채용" 키워드를 함께 노출
+  const brandSuffix = `${site.name} 퀵서비스 기사 채용`;
   const fullTitle =
-    path === "/" ? `${site.name} · ${site.tagline}` : `${title} | ${site.name}`;
+    path === "/"
+      ? `전국 오토바이 퀵서비스 기사 모집·채용 | ${site.name}`
+      : `${title} | ${brandSuffix}`;
   const canonical = site.url + path;
 
   // BreadcrumbList 스키마
