@@ -157,9 +157,9 @@ function districtPage(r, d) {
   });
 }
 
-// 역세권
+// 역세권 / 행정구 / 행정동
 function stationPage(r, d, s) {
-  const place = s.name;
+  const place = `${d.name} ${s.name}`;
   const siblings = (d.stations || []).filter((x) => x.slug !== s.slug);
   const areas = siblings.map((x) => ({
     name: x.name,

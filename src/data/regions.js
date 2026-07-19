@@ -8,6 +8,7 @@
 // 전국 전체 행정구역(자치구/시·군/행정구)은 districts.js 에서 병합됩니다.
 import { districts as fullDistricts } from "./districts.js";
 import { districtContent } from "./districtContent.js";
+import { seoulDong } from "./seoulDong.js";
 
 export const regions = [
   {
@@ -289,6 +290,14 @@ for (const r of regions) {
           const gc = content[g.slug] || {};
           return { slug: g.slug, name: g.name, summary: g.summary, orderProfile: gc.order, environment: gc.env };
         })
+      : r.slug === "seoul" && seoulDong[d.slug]
+      ? seoulDong[d.slug].map((dn) => ({
+          slug: dn.slug,
+          name: dn.name,
+          summary: dn.order,
+          orderProfile: dn.order,
+          environment: dn.env,
+        }))
       : cur.stations;
     return {
       slug: d.slug,
