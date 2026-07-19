@@ -373,6 +373,7 @@ figure.fig figcaption { margin-top: .6rem; font-size: .86rem; color: var(--muted
 .formula { background: var(--brand-soft); border: 1px solid #ffd9c6; border-radius: var(--radius-sm); padding: .8rem 1.1rem; font-weight: 650; color: var(--brand-dark); }
 .rsec-apply { background: linear-gradient(135deg, var(--bg-warm), #fff); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem 1.4rem; }
 .rsec-apply .cta-group { justify-content: flex-start; }
+.cond-links{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.1rem}
 .related-links .tag-grid { margin-top: .3rem; }
 @media (max-width: 640px) {
   .summary-grid, .two-col { grid-template-columns: 1fr; }

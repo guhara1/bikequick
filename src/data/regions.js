@@ -7,6 +7,7 @@
 // 아래 배열은 시·도 메타데이터 + 일부 상세(강남 역세권 등) '큐레이션 오버레이'.
 // 전국 전체 행정구역(자치구/시·군/행정구)은 districts.js 에서 병합됩니다.
 import { districts as fullDistricts } from "./districts.js";
+import { districtContent } from "./districtContent.js";
 
 export const regions = [
   {
@@ -277,19 +278,24 @@ export const regions = [
 // 행정시의 하위 행정구(gu)는 stations(3차 레벨)로 매핑.
 for (const r of regions) {
   const full = fullDistricts[r.slug] || [];
+  const content = districtContent[r.slug] || {};
   const curated = Object.fromEntries((r.districts || []).map((d) => [d.slug, d]));
   if (!full.length) continue;
   r.districts = full.map((d) => {
     const cur = curated[d.slug] || {};
+    const c = content[d.slug] || {};
     const stations = d.gu
-      ? d.gu.map((g) => ({ slug: g.slug, name: g.name, summary: g.summary }))
+      ? d.gu.map((g) => {
+          const gc = content[g.slug] || {};
+          return { slug: g.slug, name: g.name, summary: g.summary, orderProfile: gc.order, environment: gc.env };
+        })
       : cur.stations;
     return {
       slug: d.slug,
       name: d.name,
       summary: cur.summary || d.summary,
-      orderProfile: cur.orderProfile,
-      environment: cur.environment,
+      orderProfile: cur.orderProfile || c.order,
+      environment: cur.environment || c.env,
       tips: cur.tips,
       stations,
     };

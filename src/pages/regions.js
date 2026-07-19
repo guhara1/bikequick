@@ -4,9 +4,8 @@ import { regionHero } from "../data/images.js";
 import { layout } from "../templates/layout.js";
 import { esc, icon, ctaButtons, pageHero } from "../templates/components.js";
 import {
-  jumpMenu, summaryBox, reasonSection, areasSection, dutiesSection,
-  workStyleSection, incomeSection, feesSection, eligibilitySection,
-  documentsSection, joinStepsSection, beginnerSection, tipsSection,
+  jumpMenu, summaryBox, reasonSection, areasSection,
+  conditionsSection, beginnerSection, tipsSection,
   regionFaq, applySection, relatedLinks,
 } from "../templates/regionSections.js";
 
@@ -39,15 +38,9 @@ function buildRegionPage({ place, path, node, parent, areas, related, breadcrumb
   ${summaryBox(place)}
   ${reasonSection(place, node, parent)}
   ${areasSection(place, areas)}
-  ${dutiesSection()}
-  ${workStyleSection(place)}
-  ${incomeSection(place)}
-  ${feesSection()}
-  ${eligibilitySection()}
-  ${documentsSection()}
-  ${joinStepsSection()}
   ${beginnerSection(place, node, parent)}
   ${tipsSection(place, node, parent)}
+  ${conditionsSection(place)}
   ${faq.html}
   ${applySection(place)}
   ${relatedLinks(related)}

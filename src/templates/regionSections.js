@@ -4,18 +4,14 @@
 import { site } from "../data/site.js";
 import { esc, icon, ctaButtons } from "./components.js";
 
-// 목차(점프 메뉴)
+// 목차(점프 메뉴) — 지역 고유 섹션을 앞에, 공통 조건은 압축
 const TOC = [
   ["summary", "모집 요약"],
+  ["reason", "모집 이유"],
   ["areas", "운행지역"],
-  ["duties", "업무 내용"],
-  ["work", "근무 방식"],
-  ["income", "수익 구조"],
-  ["fees", "수수료·비용"],
-  ["eligibility", "지원 조건"],
-  ["documents", "준비물"],
-  ["join", "가입 절차"],
   ["beginner", "초보자 안내"],
+  ["tips", "활동 팁"],
+  ["conditions", "모집조건·수익·가입"],
   ["faq", "자주 묻는 질문"],
   ["apply", "지원하기"],
 ];
@@ -220,6 +216,29 @@ export function tipsSection(place, node, parent) {
     <h2>${esc(place)} 기사에게 유리한 활동 팁</h2>
     <p>${esc(tip)}</p>
     <p class="muted-note">운영 경험이 쌓이면 지역별 활동 팁을 계속 업데이트합니다.</p>
+  </section>`;
+}
+
+// 통합: 모집 조건·수익·비용·가입 (공통 내용은 압축 + 정식 안내 페이지로 링크)
+export function conditionsSection(place) {
+  return `<section class="rsec" id="conditions">
+    <h2>${esc(place)} 퀵기사 모집 조건 · 수익 · 가입</h2>
+    <p>${esc(place)}도 전국 공통 조건으로 모집합니다. <strong>출퇴근 자유 · 예치금 0원 · 비대면 가입</strong>이며, 서류·소형물품·부품·샘플 등 콜을 모바일 앱에서 직접 선택해 운행합니다. 만 18세 이상, 오토바이 운행이 가능하면 초보자도 지원할 수 있습니다. 수수료·고용보험·적재물보험·출근비 등 비용은 상담 시 실제 기준으로 투명하게 안내합니다.</p>
+    <div class="table-wrap"><table class="income-table">
+      <thead><tr><th>하루 운임(예시)</th><th>수수료 20% 예시</th><th>차감 후(예시)</th></tr></thead>
+      <tbody>
+        <tr><td>80,000원</td><td>16,000원</td><td>64,000원</td></tr>
+        <tr><td>120,000원</td><td>24,000원</td><td>96,000원</td></tr>
+      </tbody>
+    </table></div>
+    <p class="disclaimer">※ 위 표는 계산 예시이며 보장 수익이 아닙니다. 실제 수입은 근무시간·콜 선택·이동거리·교통상황·경력에 따라 달라집니다.</p>
+    <div class="cond-links">
+      <a class="tag-link" href="/work-guide/">근무 방식·조건 자세히</a>
+      <a class="tag-link" href="/income/">수익 구조·시간대별 안내</a>
+      <a class="tag-link" href="/join/">준비물·비대면 가입 절차</a>
+      <a class="tag-link" href="/education/">초보 기사 교육</a>
+      <a class="tag-link" href="/faq/">자주 묻는 질문</a>
+    </div>
   </section>`;
 }
 
